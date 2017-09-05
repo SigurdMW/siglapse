@@ -1,4 +1,4 @@
-class Collapse {
+class Siglapse {
   constructor(options){
     // Todo: default options
     this.options = options;
