@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Prototype</title>
+    <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="collapse">
+      <a href="#test" class="collapse-trigger">Toggle collapse</a>
+      <div class="collapse-body">
+        collapse body
+      </div>
+    </div>
+
+    <h2>About the collapse</h2>
+    <p>Initiate with <pre>(new Collapse).init(".collapse")</pre></p>
+
+  <script src="app.js"></script>
+  <script>
+    (function(){
+      const options = {
+        selector: ".collapse",
+        onInit: someInitFunction,
+        beforeToggle: beforeToggleFunction,
+        onToggle: onToggleFunction,
+        afterToggle: afterToggleFunction
+      };
+      const siglapse = new Collapse(options);
+      siglapse.init();
+
+      function someInitFunction(){
+        console.log("Custom function running on init.");
+      }
+
+      function beforeToggleFunction(){
+        console.log("Custom function running before toggle");
+      }
+
+      function onToggleFunction(){
+        console.log("Custom function running on toggle");
+        console.log(siglapse.trigger);
+      }
+
+      function afterToggleFunction(){
+        console.log("Custom function running after toggle");
+      }
+
+    })();
+  </script>
+  </body>
+</html>
